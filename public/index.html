@@ -1,0 +1,31 @@
+<!-- public/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Nombre</title>
+</head>
+<body>
+    <h1>Enviar Nombre</h1>
+    <form id="name-form">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById('name-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const response = await fetch('/.netlify/functions/submitName', {
+                method: 'POST',
+                body: JSON.stringify({ name }),
+            });
+            const data = await response.json();
+            alert(data.message);
+        });
+    </script>
+</body>
+</html>

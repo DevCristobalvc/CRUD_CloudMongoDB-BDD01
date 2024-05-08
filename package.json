@@ -1,0 +1,12 @@
+{
+    "name": "crud_cloudmongodb-bdd01",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "echo 'No hay construcción necesaria'",
+      "deploy": "netlify deploy --prod"
+    },
+    "devDependencies": {
+      "netlify-cli": "^3.39.8"
+    }
+  }
+  
