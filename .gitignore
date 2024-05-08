@@ -17,7 +17,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Netlify build directory
-/.netlify
+#/.netlify
 
 # OS generated files
 .DS_Store
