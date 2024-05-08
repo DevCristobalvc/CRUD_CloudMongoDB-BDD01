@@ -19,9 +19,9 @@ async function connectToMongoDB() {
 
     // Enviar un ping para confirmar una conexión exitosa
     await client.db("admin").command({ ping: 1 });
-    console.log("¡Conexión exitosa a MongoDB Atlas!");
+        console.log("¡Conexión exitosa a MongoDB Atlas!");
   } catch (error) {
-    console.error("Error al conectar a MongoDB Atlas:", error);
+        console.error("Error al conectar a MongoDB Atlas:", error);
   }
 }
 
