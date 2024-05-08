@@ -7,7 +7,7 @@ const uri = "mongodb+srv://DevCristobalvc:Atlas+0326@cluster0.tqp9n9p.mongodb.ne
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
-    strict: true,
+    strict: true, 
     deprecationErrors: true,
   }
 });
@@ -19,11 +19,13 @@ async function connectToMongoDB() {
 
     // Enviar un ping para confirmar una conexión exitosa
     await client.db("admin").command({ ping: 1 });
-        console.log("¡Conexión exitosa a MongoDB Atlas!");
+    console.log("¡Conexión exitosa a MongoDB Atlas!");
+    return client;
   } catch (error) {
-        console.error("Error al conectar a MongoDB Atlas:", error);
+    console.error("Error al conectar a MongoDB Atlas:", error);
+    throw error;
   }
 }
 
 // Llamar a la función para conectar a MongoDB
-connectToMongoDB();
+module.exports = { connectToMongoDB };

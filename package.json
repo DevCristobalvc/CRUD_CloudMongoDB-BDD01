@@ -4,7 +4,7 @@
     "description": "Proyecto CRUD con MongoDB en la nube (BDD01)",
     "author": "Cristobal Valencia Ceron",
     "scripts": {
-        "build": "echo 'No hay construcción necesaria'",
+        "start": "node index.js",
         "deploy": "netlify deploy --prod"
     },
     "dependencies": {
